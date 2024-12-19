@@ -7,7 +7,7 @@ import MyApp from './components/Button/index'
 function App() {
   return (
     <>
-      <MyApp />
+      <MyApp /> 
       <Index />
       <Header />
       <Main />
