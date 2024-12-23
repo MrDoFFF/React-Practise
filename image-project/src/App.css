@@ -1,0 +1,48 @@
+/* .input{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 5rem;
+}
+.ans{
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 5px;
+}
+.input h2{
+  font-variant: small-caps;
+  color: red;
+} */
+body{
+  background: rgb(69,69,79);
+background: linear-gradient(90deg, rgba(69,69,79,1) 0%, rgba(217,183,14,1) 50%, rgba(148,148,148,1) 100%);
+}
+form{
+  gap:2px;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+ol{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+}
+ol li{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 18px;
+
+}
+form button{
+  background-color: rgb(255, 0, 0);
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+form input{
+  border: 1px solid black;
+  border-radius: 5px;
+}
