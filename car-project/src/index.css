@@ -68,7 +68,7 @@ h1 {
   background: linear-gradient(135deg, #7b00ff, #005eff, #04ff00, #ff0000);
   background-size: 400% 400%;
   -webkit-background-clip: text;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
   color: transparent;
   text-align: center;
   font-size: 4rem;
@@ -88,7 +88,7 @@ h1 {
     background-position: 0% 75%;
   }
   100% {
-    background-position: 0% 50%;
+    background-position: 0% 100%;
   }
 }
 .car img {
@@ -175,9 +175,45 @@ h1 {
   transition: 0.2s;
   color: black;
 }
+.car button:active {
+  background-color: #04ff00;
+}
 .text-danger {
   position: absolute;
   top: 50%;
   left: 50%;
   padding: 30px;
+}
+@media screen and (max-width: 767px) {
+  h1 {
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+  }
+  .newcar {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .cars {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    padding: 40px;
+  }
+  .car {
+    width: calc(50% - 20px);
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    border-top: 1px solid rgb(157, 155, 155);
+    border-left: 1px solid rgb(157, 155, 155);
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;  
+    text-align: center;
+  }
 }

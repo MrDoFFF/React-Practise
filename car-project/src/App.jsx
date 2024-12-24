@@ -89,8 +89,8 @@ const App = () => {
 
   return (
     <div>
+      {/* <button>Light Mode</button> */}
       <h1>Cars List</h1>
-
       {loading && (
         <div className="spinner-border text-danger" role="status"></div>
       )}
