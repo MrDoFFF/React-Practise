@@ -15,11 +15,11 @@ export default function App() {
         <Routes>
           <Route path="/" element={<NavBar />}>
             <Route index element={<HomePage/>} />
-            <Route path="addproduct" element={<AddProduct />} />
             <Route path="editproduct" element={<EditProduct />} />
             <Route path="productdetail" element={<ProductDetailPage />} />
             <Route path="products" element={<Products />} />
             </Route>
+            <Route path="addproduct" element={<AddProduct />} />
           <Route path="*" element={<NoPage />} />
 
         </Routes>

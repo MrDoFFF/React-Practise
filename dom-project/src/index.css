@@ -1,4 +1,4 @@
-*{
+* {
   text-decoration: none;
   outline: none;
   list-style: none;
@@ -6,36 +6,38 @@
   padding: 0;
   box-sizing: border-box;
 }
-nav{  
+nav {
   padding: 20px;
   background-color: rgb(93, 93, 93);
 }
-nav ul li a{
+nav ul li a {
   color: white;
   font-variant: small-caps;
   font-size: 22px;
   text-decoration: none;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 nav ul {
   justify-content: center;
   display: flex;
   gap: 20px;
 }
-.home{
+.home {
   height: 78vh;
 }
-.home h1{
+.home h1 {
   font-variant: small-caps;
   font-size: 50px;
   text-decoration: none;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   display: flex;
   padding-top: 12rem;
   justify-content: center;
-  align-items: center;  
+  align-items: center;
 }
-footer{
+footer {
   display: flex;
   justify-content: center;
   color: white;
@@ -44,13 +46,77 @@ footer{
   font-variant: small-caps;
   font-size: 16px;
   text-decoration: none;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
-.table h1{
+.table h1 {
+  padding-top: 10px;
   display: flex;
   justify-content: center;
   font-variant: small-caps;
   font-size: 25px;
   text-decoration: none;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+table{
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border: 2px solid black;
+}
+thead{
+  background-color: red;
+}
+.id{
+  background-color: red;
+}
+.add {
+  padding: 8px 5px;
+  color: white;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 16px;
+  background-color: rgb(0, 190, 13);
+  float: right;
+  border-radius: 5px;
+}
+.loading{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(20px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+h1 span {
+  display: inline-block;
+  animation: bounceIn 1s ease forwards;
+}
+
+h1 span:nth-child(even) {
+  animation-delay: 0.2s;
+}
+
+h1 span:nth-child(odd) {
+  animation-delay: 0.5s;
+}
+h1{
+  color: red;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
