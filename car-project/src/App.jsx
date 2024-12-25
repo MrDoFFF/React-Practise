@@ -9,7 +9,7 @@ const App = () => {
     marka: "",
     model: "",
     price: "",
-  });
+  }); 
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
