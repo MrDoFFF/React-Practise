@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const AddProductPage = () => {
   const [name, setName] = useState("");
@@ -34,8 +34,13 @@ const AddProductPage = () => {
   };
 
   return (
-    <div>
-      <h1>Yeni Məhsul Əlavə et</h1>
+    <div className="add-title">
+      <>
+        <Link to="/products">
+          <button> <i class="fa-solid fa-arrow-left fa-lg"></i></button>
+        </Link>
+      </>
+      <h1>Add Products</h1>
       <form onSubmit={handleSubmit}>
         <div>
           <label>Ad: </label>
@@ -44,6 +49,7 @@ const AddProductPage = () => {
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
+            placeholder="mehsul adi"
           />
         </div>
         <div>
@@ -53,6 +59,7 @@ const AddProductPage = () => {
             value={price}
             onChange={(e) => setPrice(e.target.value)}
             required
+            placeholder="mehsul qiymeti"
           />
         </div>
         <div>
@@ -62,9 +69,10 @@ const AddProductPage = () => {
             value={stock}
             onChange={(e) => setStock(e.target.value)}
             required
+            placeholder="mehsul sayi"
           />
         </div>
-        <button type="submit">Əlavə et</button>
+        <button type="submit">ADD</button>
       </form>
     </div>
   );

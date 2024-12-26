@@ -6,10 +6,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 nav {
   padding: 20px;
   background-color: rgb(93, 93, 93);
 }
+
 nav ul li a {
   color: white;
   font-variant: small-caps;
@@ -18,14 +20,17 @@ nav ul li a {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
+
 nav ul {
   justify-content: center;
   display: flex;
   gap: 20px;
 }
+
 .home {
   height: 78vh;
 }
+
 .home h1 {
   font-variant: small-caps;
   font-size: 50px;
@@ -37,6 +42,7 @@ nav ul {
   justify-content: center;
   align-items: center;
 }
+
 footer {
   display: flex;
   justify-content: center;
@@ -49,6 +55,7 @@ footer {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
+
 .table h1 {
   padding-top: 10px;
   display: flex;
@@ -59,17 +66,21 @@ footer {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
-table{
+
+table {
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
   border: 2px solid black;
 }
-thead{
+
+thead {
   background-color: red;
 }
-.id{
+
+.id {
   background-color: red;
 }
+
 .add {
   padding: 8px 5px;
   color: white;
@@ -81,7 +92,8 @@ thead{
   float: right;
   border-radius: 5px;
 }
-.loading{
+
+.loading {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -95,10 +107,12 @@ thead{
     transform: translateY(-200px);
     opacity: 0;
   }
+
   50% {
     transform: translateY(20px);
     opacity: 1;
   }
+
   100% {
     transform: translateY(0);
   }
@@ -116,7 +130,96 @@ h1 span:nth-child(even) {
 h1 span:nth-child(odd) {
   animation-delay: 0.5s;
 }
-h1{
+
+h1 {
   color: red;
   font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  padding-top: 5rem;
+  gap: 1rem;
+  color: white;
+}
+
+.add-title h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-title {
+  background-color: rgb(93, 93, 93);
+  height: 100vh;
+}
+
+form input {
+  color: white;
+  padding: 2px;
+  border-radius: 8px;
+  background-color: transparent;
+  border: 1px solid rgb(255, 255, 255);
+}
+
+form input::placeholder {
+  color: white;
+  opacity: 0.8;
+  padding: 5px;
+}
+
+label {
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(255, 90, 90);
+}
+
+form button {
+  padding: 3px 10px;
+  border-radius: 10px;
+  background-color: rgb(5, 210, 5);
+  color: white;
+  font-size: 14px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.add-title button {
+  background-color: rgb(5, 210, 5);
+  padding: 5px 10px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+}
+.buttons{
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  gap: 5px;
+}
+.buttons button{
+  border-radius: 5px;
+}
+.detailcard{
+  font-size: 18px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border: 1px solid red;
+  border-radius: 10px;
+  width: 300px;
+  height: 200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 35px;
+}
+.backprod{
+  border: none;
+  border-radius: 5px;
+  margin-top: 1rem;
+  padding: 8px;
+  background-color: red;
+  color: white;
+
 }

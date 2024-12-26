@@ -22,7 +22,7 @@ const ProductsPage = () => {
     <div className="table">
       <h1>Products</h1>
       <Link to="/addproduct">
-        <button className="add">Add Products</button>
+        <button className="add">Add Products <i class="fa-solid fa-arrow-right fa-lg"></i></button>
       </Link>
 
       {loading ? (
@@ -45,7 +45,7 @@ const ProductsPage = () => {
                 <td>{product.name}</td>
                 <td>{product.unitPrice}</td>
                 <td>{product.unitsInStock}</td>
-                <td>
+                <td className="buttons">
                   <button
                     style={{
                       backgroundColor: "red",
@@ -68,6 +68,19 @@ const ProductsPage = () => {
                       }}
                     >
                       Edit
+                    </button>
+                  </Link>
+                  <Link to={`/productdetail/${product.id}`}>
+                    <button
+                      style={{
+                        backgroundColor: "orange  ",
+                        color: "white",
+                        padding: "5px 10px",
+                        border: "none",
+                        marginLeft: "10px",
+                      }}
+                    >
+                     Detail
                     </button>
                   </Link>
                 </td>
