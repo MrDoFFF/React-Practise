@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { WEB_API } from "../../constants";
 
 const AddProductPage = () => {
   const [name, setName] = useState("");
@@ -16,7 +17,7 @@ const AddProductPage = () => {
       unitsInStock: stock,
     };
 
-    fetch("https://northwind.vercel.app/api/products", {
+    fetch(`${WEB_API}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

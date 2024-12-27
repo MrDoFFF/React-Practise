@@ -191,16 +191,19 @@ form button {
   border: none;
   border-radius: 5px;
 }
-.buttons{
+
+.buttons {
   display: flex;
   justify-content: center;
   padding: 5px;
   gap: 5px;
 }
-.buttons button{
+
+.buttons button {
   border-radius: 5px;
 }
-.detailcard{
+
+.detailcard {
   font-size: 18px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   border: 1px solid red;
@@ -214,12 +217,15 @@ form button {
   justify-content: center;
   line-height: 35px;
 }
-.backprod{
+
+.backprod {
   border: none;
   border-radius: 5px;
   margin-top: 1rem;
   padding: 8px;
   background-color: red;
   color: white;
-
+}
+button{
+  cursor: pointer;
 }

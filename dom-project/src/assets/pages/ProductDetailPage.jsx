@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
+import { WEB_API } from "../../constants";
 
 const ProductDetail = () => {
   const { id } = useParams(); 
@@ -7,7 +8,7 @@ const ProductDetail = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`https://northwind.vercel.app/api/products/${id}`)
+    fetch(`${WEB_API}products/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);

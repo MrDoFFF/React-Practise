@@ -1,0 +1,1 @@
+export  const WEB_API = "https://676e2c9fdf5d7dac1cc9dca4.mockapi.io/api/araz";

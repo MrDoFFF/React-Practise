@@ -1,0 +1,116 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  outline: none;
+  text-decoration: none;
+}
+
+nav {
+  background-color: rgb(40, 40, 255);
+  padding: 20px
+}
+
+nav ul li a {
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  transition: 0.3s;
+  border: 1px solid black;
+  padding: 2px;
+  background-color: antiquewhite;
+  border-radius: 5px;
+
+}
+
+nav ul li a:hover {
+  color: red;
+
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+footer {
+  background-color: rgb(40, 40, 255);
+  padding: 20px
+}
+
+footer h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.home {
+  height: 80vh;
+}
+
+.home h1 {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 5px;
+  color: red;
+}
+
+.contact {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+
+}
+
+.contact p {
+  line-height: 25px;
+  padding: 70px;
+  font-size: 14px;
+  font-family: sans-serif;
+}
+
+.home-body {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.home-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.home-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  margin: 18rem;
+}
+
+.adminadd {
+  height: 80vh;
+}
+
+.admintable {
+  height: 80vh;
+  padding: 20px;
+}
+
+table button {
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+}

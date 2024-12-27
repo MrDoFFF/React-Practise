@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Formik, Form, Field } from "formik";
+import { WEB_API } from "../../constants";
 
 const EditProduct = () => {
-  const { id } = useParams(); // URL-dən məhsul ID-sini al
+  const { id } = useParams();
   const navigate = useNavigate();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`https://northwind.vercel.app/api/products/${id}`)
+    fetch(`${WEB_API}products/${id}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log("Fetched product:", data); // Konsola məhsulun məlumatını yaz
-        setProduct(data); 
+        console.log("Fetched product:", data);
+        setProduct(data);
         setLoading(false);
       })
       .catch((error) => console.error("Error fetching product:", error));
@@ -37,26 +38,26 @@ const EditProduct = () => {
           unitsInStock: product.unitsInStock,
         }}
         onSubmit={(values) => {
-          console.log("Submitting values:", values); // Konsola formun göndərilən dəyərlərini yaz
-          fetch(`https://northwind.vercel.app/api/products/${id}`, {
+          console.log("Submitting values:", values);
+          fetch(`${WEB_API}products/${id}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(values),
           })
             .then((res) => {
-              console.log("Response status:", res.status); // Status kodunu konsola yaz
+              console.log("Response status:", res.status);
               if (!res.ok) {
                 throw new Error("Failed to update product.");
               }
               return res.json();
             })
             .then((data) => {
-              console.log("Updated product:", data); // Yenilənmiş məhsulun məlumatını konsola yaz
+              console.log("Updated product:", data);
               alert("Product updated successfully!");
-              navigate("/"); // Əsas səhifəyə yönləndir 
+              navigate("/products")
             })
             .catch((error) => {
-              console.error("Error updating product:", error); // Səhv mesajını konsola yaz
+              console.error("Error updating product:", error);
               alert("Error updating product: " + error.message);
             });
         }}
