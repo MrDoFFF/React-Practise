@@ -5,7 +5,7 @@ function AdminNavBar() {
         <div>
             <nav>
                 <ul>
-                    <li><NavLink to="adminlayout">Product Table</NavLink></li>
+                    <li><NavLink to="/adminlayout">Product Table</NavLink></li>
                     <li><NavLink to="adminadd">Add Product</NavLink></li>
                 </ul>
             </nav>

@@ -41,11 +41,6 @@ function AdminTable() {
                 seterror(err.message);
             })
     }
-
-    const editproduct = (id) => {
-        alert(`Redakte etmek ucun ID:${id}`)
-    }
-
     if (loading) {
         return <div className='loading' >Yüklənir...</div>;
     }
@@ -82,11 +77,11 @@ function AdminTable() {
                             <td>{product.price}</td>
                             <td>{product.description}</td>
                             <td>
-                                <button onClick={() => editproduct(product.id)} style={{ marginRight: '10px', backgroundColor: 'lightgreen' }}>
-                                    Redaktə et
+                                <button style={{ marginRight: '10px', backgroundColor: 'lightgreen' }}>
+                                    Edit
                                 </button>
                                 <button onClick={() => deleteproduct(product.id)} style={{ backgroundColor: 'red', color: 'white' }}>
-                                    Sil
+                                    Delete
                                 </button>
                             </td>
                         </tr>

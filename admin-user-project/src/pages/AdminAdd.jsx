@@ -11,19 +11,19 @@ function AdminAdd() {
     const [success, setSuccess] = useState(null);
 
     const handleSubmit = (e) => {
-        e.preventDefault(); // Formun səhifəni yeniləməsinin qarşısını alırıq
+        e.preventDefault();
 
-        // Məlumatların düzgünlüyünü yoxlama
+
         if (!name || !price || !description || !image) {
             setError('Bütün sahələri doldurun!');
             return;
         }
 
-        setLoading(true); // Yükləmə vəziyyətini aktivləşdiririk
-        setError(null);   // Əvvəlki xətaları təmizləyirik
-        setSuccess(null); // Əvvəlki uğur mesajını təmizləyirik
+        setLoading(true);
+        setError(null);  
+        setSuccess(null);
 
-        // Yeni məhsul məlumatı
+
         const newProduct = {
             name,
             price,
@@ -31,13 +31,13 @@ function AdminAdd() {
             image,
         };
 
-        // POST sorğusu ilə API-ə göndəririk
+
         fetch(WEB_API, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(newProduct), // Məlumatı JSON formatına çeviririk
+            body: JSON.stringify(newProduct), 
         })
         .then((response) => {
             if (!response.ok) {
@@ -46,23 +46,22 @@ function AdminAdd() {
             return response.json();
         })
         .then(() => {
-            setSuccess('Məhsul uğurla əlavə edildi!'); // Uğurlu mesaj
+            setSuccess('Məhsul uğurla əlavə edildi!');
             setName('');
             setPrice('');
             setDescription('');
             setImage('');
         })
         .catch((err) => {
-            setError(err.message); // Xətanı state-də saxlayırıq
+            setError(err.message); 
         })
         .finally(() => {
-            setLoading(false); // Yükləmə vəziyyətini dayandırırıq
+            setLoading(false);
         });
     };
 
     return (
         <div style={{ padding: '20px' }}>
-            <h1>Məhsul Əlavə Et</h1>
             <form onSubmit={handleSubmit} style={{ maxWidth: '400px', margin: '0 auto' }}>
                 {error && <div style={{ color: 'red', marginBottom: '10px' }}>{error}</div>}
                 {success && <div style={{ color: 'green', marginBottom: '10px' }}>{success}</div>}
