@@ -24,7 +24,7 @@ function App() {
           
             <Route path="adminupdate" element={<AdminUpdate />} />
           </Route>
-          <Route path="*" element={"Not Found"} />
+          <Route path="*" element={"Not Found"}/>
         </Routes>
       </BrowserRouter>
     </>
