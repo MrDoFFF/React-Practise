@@ -1,7 +1,9 @@
 {
   "dependencies": {
     "formik": "^2.4.6",
-    "react-router-dom": "^7.1.1",
     "yup": "^1.6.1"
+  },
+  "devDependencies": {
+    "react-router-dom": "^7.1.1"
   }
 }

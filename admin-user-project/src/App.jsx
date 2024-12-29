@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from './pages/Layout';
 import AdminNavBar from './pages/AdminLayout';
+import Wishlist from './pages/Wishlist';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="contact" element={<Contact />} />
+            <Route path="wishlist" element={<Wishlist />} />
           </Route>
 
           <Route path="adminlayout" element={<AdminNavBar />}>

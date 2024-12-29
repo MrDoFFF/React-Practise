@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { WEB_API } from '../constant'
+import { useNavigate } from 'react-router-dom';
 export default function Home() {
     const [products, setproducts] = useState([]);
     const [loading, setloading] = useState(true);
-    const [error, seterror] = useState(null)
+    const [error, seterror] = useState(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetch(WEB_API)
@@ -34,6 +36,11 @@ export default function Home() {
         return <div>{error}</div>;
     }
 
+    const handleWishlistClick = () => {
+        navigate('/wishlist'); 
+        
+    };
+
     return (
         <div className='home' style={{ padding: '20px' }}>
             <h1>Ne varsa Arazda Var</h1>
@@ -48,6 +55,12 @@ export default function Home() {
                         <h3>{product.name}</h3>
                         <p><strong>Qiymət:</strong> ${product.price}</p>
                         <p><strong>Təsvir:</strong> {product.description}</p>
+                        <div>
+                        
+                           <button      className="wishlist-icon" 
+                            onClick={handleWishlistClick} 
+                            style={{ cursor: 'pointer' }}>❤️</button>
+                        </div>
                     </div>
                 ))}
             </div>

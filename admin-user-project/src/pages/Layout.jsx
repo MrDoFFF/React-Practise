@@ -8,6 +8,7 @@ function Layout() {
                 <ul>
                     <li><NavLink to="/">Home</NavLink></li>
                     <li><NavLink to="contact">Contact</NavLink></li>
+                    <li><NavLink to="wishlist">Wishlist</NavLink></li>   
                 </ul>
             </nav>
             <Outlet />
