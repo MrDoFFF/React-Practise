@@ -54,7 +54,7 @@ export default function Home() {
                         />
                         <h3>{product.name}</h3>
                         <p><strong>Qiymət:</strong> ${product.price}</p>
-                        <p><strong>Təsvir:</strong> {product.description}</p>
+                        <p><strong>Təsvir:</strong> ${product.description}</p>
                         <div>
                         
                            <button      className="wishlist-icon" 
