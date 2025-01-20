@@ -2,6 +2,9 @@ const express = require("express");
 const { mongo, default: mongoose } = require("mongoose");
 const app = express();
 const port = 3000;
+const cors = require("cors");
+
+app.use(cors())
 
 mongoose
   .connect(
@@ -27,17 +30,17 @@ app.get("/users", async (req, res) => {
   }
 });
 app.get("/users/:id", async (req, res) => {
-    const { id } = req.params;
-    try {
-      const user = await User.findById(id);
-      if (!user) {
-        return res.status(404).json({ error: "Istifadəçi tapılmadı" });
-      }
-      res.json(user);
-    } catch (err) {
-      res.json({ error: "Melumat yuklenerken xeta bas verdi" });
+  const { id } = req.params;
+  try {
+    const user = await User.findById(id);
+    if (!user) {
+      return res.status(404).json({ error: "Istifadəçi tapılmadı" });
     }
-  });
+    res.json(user);
+  } catch (err) {
+    res.json({ error: "Melumat yuklenerken xeta bas verdi" });
+  }
+});
 
 app.use(express.json());
 
@@ -58,18 +61,19 @@ app.post("/users", async (req, res) => {
   }
 });
 
-app.delete("/users/:id," , async (req, res)=> {
-    const {id} = req.params;
-    try{
-        const deletedUser = await User.findByIdAndDelete(id);
-        if (!deletedUser) {
-            return res.send("Melumat tapilmadi")
-        }
-        res.send("Melumat silindi")
-    } catch(err) {
-        res.send("Melumat silinerken xeta bas verdi")
+app.delete("/users/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    const deletedUser = await User.findByIdAndDelete(id);
+    if (!deletedUser) {
+      return res.send("Melumat tapilmadi");
     }
-} )
+    res.send("Melumat silindi");
+  } catch (err) {
+    res.send("Melumat silinerken xeta bas verdi");
+  }
+});
+
 app.listen(port, () => {
   console.log(`Dinlenilirrr... port:${port}`);
 });
