@@ -1,50 +1,79 @@
-import React, { useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
-import './pages.css';
+import React, { useState, useEffect } from "react";
+import { Helmet } from "react-helmet-async";
+import "./pages.css";
 
 function Home() {
-    const [immigrations, setImmigrations] = useState([]);  // Məlumatları saxlamaq üçün state
-    const [loading, setLoading] = useState(true);           // Yüklenmə vəziyyəti
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-    useEffect(() => {
-        // API-dən məlumatları alırıq
-        fetch('http://localhost:3050/immigrations')
-            .then((response) => response.json())
-            .then((data) => {
-                setImmigrations(data);  // Alınan məlumatları state-ə əlavə edirik
-                setLoading(false);       // Yüklenmə vəziyyətini bitiririk
-            })
-            .catch((error) => {
-                console.error("Xəta baş verdi:", error);
-                setLoading(false);       // Xəta olarsa da yüklenmə vəziyyətini bitiririk
-            });
-    }, []);  // `useEffect` yalnız komponent ilk dəfə render olduqda çalışacaq
+  useEffect(() => {
+    fetch("http://localhost:3000/users/")
+      .then((response) => response.json())
+      .then((data) => {
+        setImmigrations(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Xəta baş verdi:", error);
+        setError("Bir səhv baş verdi. Zəhmət olmasa yenidən cəhd edin.");
+        setLoading(false);
+      });
+  }, []);
 
-    if (loading) {
-        return <p>Yüklənir...</p>;
-    }
-
+  if (loading) {
     return (
-        <div>
-            <Helmet>
-                <meta charSet="utf-8" />
-                <title>Home V</title>
-            </Helmet>
-
-            <div className="cards-container">
-                {immigrations.map((item) => (
-                    <div className="card" key={item._id}>
-                        <img src={item.image} alt={item.title} className="card-img" />
-                        <div className="card-content">
-                            <h3>{item.title}</h3>
-                            <p><strong>Ölkə:</strong> {item.country}</p>
-                            <p>{item.description}</p>
-                        </div>
-                    </div>
-                ))}
-            </div>
-        </div>
+      <p
+        style={{
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          fontSize: "24px",
+        }}
+      >
+        Yüklənir...
+      </p>
     );
+  }
+
+  if (error) {
+    return (
+      <p
+        style={{
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          fontSize: "24px",
+          color: "red",
+        }}
+      >
+        {error}
+      </p>
+    );
+  }
+
+  return (
+    <div>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Home V</title>
+      </Helmet>
+
+      <div className="cards-container">
+        {immigrations.map((item) => (
+          <div className="card" key={item._id}>
+            <img src={item.image} alt={item.title} className="card-img" />
+            <div className="card-content">
+              <button>{item.country}</button>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }
 
 export default Home;
